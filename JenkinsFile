@@ -1,6 +1,6 @@
 pipeline {
     agent any
-    stages {
+stages {
         stage('Checkout') {
             steps {
                 git branch: 'main', url: 'https://github.com/dalissia/Customers_Batch.git'
@@ -16,7 +16,6 @@ pipeline {
         stage('Run Unit Tests') {
             steps {
                 sh 'mvn test'
-            }
             }
         }
     }
