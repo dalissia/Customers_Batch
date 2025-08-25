@@ -13,7 +13,7 @@ pipeline {
         }
         stage('Run Batch (optionnel)') {
             steps {
-                echo 'Job Spring Batch simulé ✔️'
+                echo 'Job Spring Batch simulé ! ✔️'
             }
         }
     }
