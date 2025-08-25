@@ -1,0 +1,20 @@
+pipeline {
+    agent any
+    triggers {
+        ////Vérifie toutes les 2 minutes pour de nouveaux commits
+        pollSCM('H/2 * * * *')
+    }
+    stages {
+        stage('Build Back-end') {
+            steps {
+                // Compile l'application Spring Boot
+                sh 'mvn clean install'
+            }
+        }
+        stage('Run Batch (optionnel)') {
+            steps {
+                echo 'Job Spring Batch simulé ✔️'
+            }
+        }
+    }
+}
