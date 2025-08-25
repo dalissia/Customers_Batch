@@ -13,7 +13,7 @@ import java.util.List;
 public class CustomerController {
    @Autowired
     CustomerService customerService ;
-
+//GetAllCustomers
    @GetMapping("/customers")
     public List<CustomerDTO> customerList(){
        return customerService.getAllCustomers();
