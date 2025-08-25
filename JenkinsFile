@@ -1,15 +1,22 @@
 pipeline {
     agent any
     stages {
-        stage('Build Back-end') {
+        stage('Checkout') {
             steps {
-                // Compile l'application Spring Boot
+                git branch: 'main', url: 'https://github.com/dalissia/Customers_Batch.git'
+            }
+        }
+
+        stage('Build') {
+            steps {
                 sh 'mvn clean install'
             }
         }
-        stage('Run Batch (optionnel)') {
+
+        stage('Run Unit Tests') {
             steps {
-                 echo 'Job Spring Batch simulé !'
+                sh 'mvn test'
+            }
             }
         }
     }
