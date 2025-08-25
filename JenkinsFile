@@ -1,9 +1,5 @@
 pipeline {
     agent any
-    triggers {
-        //Vérifie toutes les 2 minutes pour de nouveaux commits
-        pollSCM('H/2 * * * *')
-    }
     stages {
         stage('Build Back-end') {
             steps {
@@ -13,7 +9,7 @@ pipeline {
         }
         stage('Run Batch (optionnel)') {
             steps {
-                echo 'Job Spring Batch simulé '
+                 echo 'Job Spring Batch simulé '
             }
         }
     }
